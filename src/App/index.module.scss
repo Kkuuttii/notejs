@@ -2,6 +2,14 @@ body {
   width: 100%;
   height: 100vh;
   margin: 0;
+  background-color: #d8e1e930;
+}
+
+:root {
+  --main-background: #d8e1e9;
+  --header: #b3c5d7e3;
+  --logo: #31445e;
+  --button: #5384a2;
 }
 
 .app {
@@ -12,6 +20,8 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  background-color: var(--main-background);
 }
 
 ::-webkit-scrollbar {

@@ -1,0 +1,2 @@
+export const TOGGLE_DB_CHANGING: string = "TOGGLE_DB_CHANGING";
+export const CHANGE_SELECTED_FILTER: string = "APPLY_SELECTED_FILTER";

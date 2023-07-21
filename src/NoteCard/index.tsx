@@ -1,26 +1,26 @@
 import styles from "./index.module.scss";
-import React from "react";
+import { Delete } from "Delete";
+import { NoteModal } from "NoteModal";
 import { Card } from "antd";
-import Note from "../Note/index";
-import Delete from "../Delete";
-function NoteCard() {
+
+interface INoteCard {
+  text: string;
+  id: number;
+  tags: string[];
+}
+
+const { Meta } = Card;
+
+export function NoteCard({ text, id, tags }: INoteCard) {
   return (
     <Card
-      title="Default size card"
-      extra={
-        <div className={styles.noteOptions}>
-          <Note text={"Open & Edit"} />
-          <Delete />
-        </div>
-      }
       className={styles.card}
-      headStyle={{ background: "green" }}
+      actions={[
+        <NoteModal isEdit={true} id={id} value={text} />,
+        <Delete id={id} />,
+      ]}
     >
-      <span>Card content</span>
-      <span>Card content</span>
-      <span>Card content</span>
+      <Meta title={text} description={tags.join(" ")} />
     </Card>
   );
 }
-
-export default NoteCard;

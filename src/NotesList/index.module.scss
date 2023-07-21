@@ -1,12 +1,13 @@
 .notesList {
-  padding: 20px 0;
   width: 100%;
   height: 100%;
-  background-color: yellow;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-
   overflow-x: auto;
+}
+.cardsContainer {
+  display: flex;
+  padding: 20px 0;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
 }
