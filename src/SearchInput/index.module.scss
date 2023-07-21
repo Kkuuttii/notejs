@@ -1,0 +1,21 @@
+.selectWrapper {
+  width: 70%;
+}
+
+.select {
+  min-height: 30px;
+  height: auto;
+  width: 100%;
+  div {
+    div {
+      gap: 3px;
+      div {
+        width: auto;
+      }
+    }
+  }
+}
+
+.popup {
+  height: auto;
+}
