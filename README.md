@@ -46,8 +46,8 @@ Hashtags help you filter your posts.
 ### Challenges and solving
 The biggest challenge was to create a text editor that would highlight hashtags in note writing mode. 
 I tried different ways to solve the problem:
-• I used the div tag with attribute contenteditable 
-• I was looking for different ways to create input
-• Also I found property dangerouslySetInnerHTML, but of course I didn't use it.
-• And I found Draft.js (is a JavaScript rich text editor framework, built for React and backed by an immutable model). I found this method the most convenient, understandable and most suitable. Thus, I settled on this method.
+- I used the div tag with attribute contenteditable 
+- I was looking for different ways to create input
+- Also I found property dangerouslySetInnerHTML, but of course I didn't use it.
+- And I found Draft.js (is a JavaScript rich text editor framework, built for React and backed by an immutable model). I found this method the most convenient, understandable and most suitable. Thus, I settled on this method.
 
