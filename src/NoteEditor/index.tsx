@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, ReactNode } from "react";
+import React, { useState, useRef, useEffect, ReactNode } from "react";
 import styles from "./index.module.scss";
 import { collectTags } from "utils/constants";
 import {
@@ -58,8 +58,33 @@ export function NoteEditor({ value, onChange }: INoteEditor) {
 
   const focusEditor = () => editor.current?.focus();
 
+  // Функция для установки курсора в конец текста
+  const setCursorToEnd = () => {
+    if (editor.current) {
+      const contentState = editorState.getCurrentContent();
+      const blockMap = contentState.getBlockMap();
+      const lastBlock = blockMap.last();
+      const lastBlockKey = lastBlock.getKey();
+      const lastBlockLength = lastBlock.getLength();
+
+      const newEditorState = EditorState.forceSelection(
+        editorState,
+        editorState.getSelection().merge({
+          anchorKey: lastBlockKey,
+          anchorOffset: lastBlockLength,
+          focusKey: lastBlockKey,
+          focusOffset: lastBlockLength,
+          hasFocus: true,
+        })
+      );
+
+      setEditorState(newEditorState);
+    }
+  };
+
   useEffect(() => {
     focusEditor();
+    setCursorToEnd(); // Вызываем функцию установки курсора при инициализации компонента
   }, []);
 
   const handleChange = (editorState: EditorState) => {
